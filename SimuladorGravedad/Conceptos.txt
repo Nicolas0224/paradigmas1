@@ -58,7 +58,7 @@ Dos métodos con el mismo nombre pero diferente número de parámetros.
 - Usuario.java línea 67: calcularDescuento(String fechaInscripcion, String membresia)
 - Principal.java línea 73: se llama con un parámetro
 - Principal.java línea 74: se llama con dos parámetros
- 
+ tttt
 10. CREACIÓN DE OBJETOS
 Se crean objetos usando "new" seguido del constructor.
 - Principal.java línea 32: new Tipo_de_usuario(...)
