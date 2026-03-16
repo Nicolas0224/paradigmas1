@@ -2,43 +2,41 @@ package co.edu.poli.contexto1.servicios;
 
 import co.edu.poli.contexto1.modelo.Tipo_de_usuario;
 import co.edu.poli.contexto1.modelo.UsuarioPersona;
-
+ 
 public class UsuarioVIP extends UsuarioPersona {
-    private String nivelMembresia;
-
+ 
+    // PUNTO 3 - atributo que no se puede cambiar
+    public final String nivelVipInicial;
+ 
+    private String nivelVip;
+ 
     public UsuarioVIP(String id, String nombre, String sexo, int edad, String altura,
                       Tipo_de_usuario tipoDeUsuario, String contacto, String telefono,
-                      String ocupacion, String nivelEducativo, String numeroCedula, String grupoSanguineo,
-                      String nivelMembresia) {
+                      String ocupacion, String nivelEducativo, String numeroCedula,
+                      String grupoSanguineo, String nivelVip) {
         super(id, nombre, sexo, edad, altura, tipoDeUsuario, contacto, telefono,
               ocupacion, nivelEducativo, numeroCedula, grupoSanguineo);
-        this.nivelMembresia = nivelMembresia;
+        this.nivelVip = nivelVip;
+        this.nivelVipInicial = nivelVip;
     }
-
-    public String getNivelMembresia() { return nivelMembresia; }
-    public void setNivelMembresia(String nivelMembresia) { this.nivelMembresia = nivelMembresia; }
-
+ 
+    public String getNivelVip() { return nivelVip; }
+    public void setNivelVip(String nivelVip) { this.nivelVip = nivelVip; }
+ 
     @Override
-    public  int calcularDescuento(String fechaInscripcion) {
-        // VIP 30 garantizado
-        int base = super.calcularDescuento(fechaInscripcion);
-        int bonusMembresia;
-        if (nivelMembresia.equals("Platino")) {
-            bonusMembresia = 15;
-        } else if (nivelMembresia.equals("Oro")) {
-            bonusMembresia = 10;
-        } else if (nivelMembresia.equals("Plata")) {
-            bonusMembresia = 5;
-        } else {
-            bonusMembresia = 0;
-        }
-        return Math.max(base + bonusMembresia, 30);
+    public int calcularDescuento(String fechaInscripcion) {
+        int base = 30;
+        if (nivelVip.equals("Platino")) return base + 20;
+        if (nivelVip.equals("Oro"))     return base + 10;
+        if (nivelVip.equals("Plata"))   return base + 5;
+        return base;
     }
-
+ 
     @Override
     public String toString() {
-        return "\n--------- DATOS VIP ---------\n" +
-                "nivelMembresia='" + nivelMembresia + '\'' +
+        return "\n********** DATOS VIP **********\n" +
+                "nivelVip='" + nivelVip + '\'' +
+                ", nivelVipInicial='" + nivelVipInicial + '\'' +
                 ", " + super.toString();
     }
 }

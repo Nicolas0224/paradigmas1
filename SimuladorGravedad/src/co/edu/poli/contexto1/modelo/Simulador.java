@@ -9,6 +9,9 @@ public class Simulador {
 
     public static String fabricante = "Tesla";
 
+    // PUNTO 3 - atributo que no se puede cambiar
+    public static final String VERSION = "v1.0";
+
     public Simulador(String id, int capacidad, boolean esOperativo, String marca, String tipo) {
         this.id = id;
         this.capacidad = capacidad;
@@ -31,6 +34,11 @@ public class Simulador {
 
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
+
+    // PUNTO 3 - método que no se puede sobreescribir
+    public final String obtenerInfo() {
+        return "Simulador: " + id + " Versión: " + VERSION;
+    }
 
     @Override
     public String toString() {

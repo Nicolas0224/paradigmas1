@@ -28,6 +28,11 @@ public class UsuarioAnimal extends Usuario {
     public boolean isVacunado() { return vacunado; }
     public void setVacunado(boolean vacunado) { this.vacunado = vacunado; }
 
+    @Override
+    public int calcularDescuento(String fechaInscripcion) {
+        if (vacunado) return 10;
+        return 0;
+    }
 
     @Override
     public String toString() {
