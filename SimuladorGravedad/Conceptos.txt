@@ -1,0 +1,89 @@
+1. MÉTODO CONSTRUCTOR
+Es el método que se llama cuando se crea un objeto con "new" e inicializa sus atributos.
+- Usuario.java línea 14: public Usuario(String id, String nombre, ...)
+- UsuarioPersona.java línea 9: public UsuarioPersona(...)
+- UsuarioAnimal.java línea 9: public UsuarioAnimal(...)
+- UsuarioVIP.java línea 13: public UsuarioVIP(...)
+- Simulador.java línea 15: public Simulador(...)
+ 
+2. MÉTODOS DE ACCESO
+Son los getters y setters, permiten leer y modificar los atributos privados de una clase.
+- Usuario.java línea 26: public String getId()
+- Usuario.java línea 27: public void setId(String id)
+- UsuarioPersona.java línea 19: public String getOcupacion()
+- UsuarioAnimal.java línea 19: public String getEspecie()
+- UsuarioVIP.java línea 23: public String getNivelVip()
+ 
+3. MÉTODO toString
+Sirve para mostrar la información de un objeto cuando se imprime.
+- Usuario.java línea 76: @Override public String toString()
+- UsuarioPersona.java línea 50: @Override public String toString()
+- UsuarioAnimal.java línea 38: @Override public String toString()
+- UsuarioVIP.java línea 36: @Override public String toString()
+- Simulador.java línea 44: @Override public String toString()
+ 
+4. MODIFICADOR static
+El atributo pertenece a la clase y no a un objeto específico, todos los objetos comparten el mismo valor.
+- Simulador.java línea 10: public static String fabricante = "Tesla"
+- Principal.java línea 67: Simulador.fabricante (se accede sin crear objeto)
+ 
+5. MODIFICADOR final
+- Atributo final (no se puede cambiar): Simulador.java línea 13: public static final String VERSION = "v1.0"
+- Atributo final (no se puede cambiar): UsuarioVIP.java línea 9: public final String nivelVipInicial
+- Método final (no se puede sobreescribir): Simulador.java línea 39: public final String obtenerInfo()
+- Clase final (no se puede heredar): ConfiguracionSimulador.java línea 3: public final class ConfiguracionSimulador
+ 
+6. VISIBILIDADES
+Controlan desde dónde se puede acceder a los atributos y métodos.
+- private: Usuario.java línea 4: private String id (solo accesible dentro de Usuario)
+- public: Usuario.java línea 26: public String getId() (accesible desde cualquier clase)
+- protected: Usuario.java línea 53: protected int calcularEdad() (accesible desde subclases)
+ 
+7. MULTIPLICIDADES
+Indica cuántos objetos se pueden relacionar con otro, se implementa con arreglos.
+- Usuario.java línea 12: private Enfermedad[] enfermedades (un usuario puede tener varias enfermedades)
+- Curso.java línea 8: private Equipo[] equipo (un curso puede tener varios equipos)
+- Principal.java línea 100: Usuario[] usuarios = new Usuario[3]
+ 
+8. SOBREESCRITURA DE MÉTODOS
+Una subclase redefine un método de la superclase usando @Override.
+- UsuarioPersona.java línea 31: @Override public int calcularDescuento(...)
+- UsuarioAnimal.java línea 31: @Override public int calcularDescuento(...)
+- UsuarioVIP.java línea 26: @Override public int calcularDescuento(...)
+- Principal.java línea 108: usuarios[i].toString() ejecuta el toString de cada subclase
+ 
+9. SOBRECARGA DE MÉTODOS
+Dos métodos con el mismo nombre pero diferente número de parámetros.
+- Usuario.java línea 62: calcularDescuento(String fechaInscripcion)
+- Usuario.java línea 67: calcularDescuento(String fechaInscripcion, String membresia)
+- Principal.java línea 73: se llama con un parámetro
+- Principal.java línea 74: se llama con dos parámetros
+ 
+10. CREACIÓN DE OBJETOS
+Se crean objetos usando "new" seguido del constructor.
+- Principal.java línea 32: new Tipo_de_usuario(...)
+- Principal.java línea 35: new UsuarioPersona(...)
+- Principal.java línea 42: new UsuarioVIP(...)
+- Principal.java línea 48: new UsuarioAnimal(...)
+- Principal.java línea 54: new Simulador(...)
+- Principal.java línea 86: new Turno(...)
+ 
+11. AGREGACIONES
+Un objeto contiene referencias a otros objetos que existen de forma independiente.
+- Turno.java línea 3: tiene Usuario, Instructor, Simulador y Curso
+- Usuario.java línea 9: tiene Tipo_de_usuario
+- Usuario.java línea 12: tiene Enfermedad[]
+- Curso.java línea 8: tiene Equipo[]
+ 
+12. HERENCIA
+Una clase hereda atributos y métodos de otra usando "extends".
+- UsuarioPersona.java línea 3: public class UsuarioPersona extends Usuario
+- UsuarioAnimal.java línea 3: public class UsuarioAnimal extends Usuario
+- UsuarioVIP.java línea 6: public class UsuarioVIP extends UsuarioPersona
+ 
+13. POLIMORFISMO
+Una variable de tipo superclase puede referenciar subclases. En ejecución se llama el método de la subclase correcta.
+- Principal.java línea 19: imprimirDescuento(Usuario usuario) recibe cualquier subclase
+- Principal.java línea 25: crearUsuarioGenerico() retorna tipo Usuario pero crea un UsuarioPersona
+- Principal.java línea 100: Usuario[] guarda UsuarioPersona, UsuarioVIP y UsuarioAnimal
+REPOSITORIO GITHUB: https://github.com/Nicolas0224/paradigmas1/tree/07b32b654ea8f383b2fdf0acec300d9bc14127aa/SimuladorGravedad https://github.com/Nicolas0224/paradigmas1
