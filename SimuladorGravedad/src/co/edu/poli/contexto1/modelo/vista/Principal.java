@@ -123,7 +123,7 @@ public class Principal {
 
 		System.out.println("\n********** PUNTO 3 - FINAL **********");
 
-		// atributo final de Simulador (no se puede cambiar)
+		// atributo final de Simulador (no se puede cambiar)---
 		System.out.println("VERSION final de Simulador: " + Simulador.VERSION);
 
 		// metodo final de Simulador (no se puede sobreescribir)
