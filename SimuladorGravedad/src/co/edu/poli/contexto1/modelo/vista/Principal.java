@@ -24,7 +24,7 @@ public class Principal {
 	// PUNTO 2 - método polimórfico que retorna un tipo supersuperclase
 	public static Usuario crearUsuarioGenerico(Tipo_de_usuario tipo) {
 		return new UsuarioPersona("102424524", "Aejandra Rueda", "Femenino", 20, "1.70", tipo, "alejita524@gmail.com",
-				"3246847152", "Estudiante", "Universitario", "00000000", "O+");
+				"3246847182", "Estudiante", "Universitario", "00000000", "O+");
 	}
 
 	public static void main(String[] args) {
