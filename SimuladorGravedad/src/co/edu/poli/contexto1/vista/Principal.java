@@ -1,4 +1,4 @@
-package co.edu.poli.contexto1.modelo.vista;
+package co.edu.poli.contexto1.vista;
 
 import co.edu.poli.contexto1.modelo.Curso;
 import co.edu.poli.contexto1.modelo.Enfermedad;
