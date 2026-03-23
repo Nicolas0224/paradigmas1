@@ -37,11 +37,11 @@ El atributo pertenece a la clase y no a un objeto específico, todos los objetos
 Controlan desde dónde se puede acceder a los atributos y métodos.
 - private: Usuario.java línea 4: private String id (solo accesible dentro de Usuario)
 - public: Usuario.java línea 26: public String getId() (accesible desde cualquier clase)
-- protected: Usuario.java línea 53: protected int calcularEdad() (accesible desde subclases)
+- protected: Usuario.java línea 53: protected int calcularanioNacimiento() (accesible desde subclases)
  
 7. MULTIPLICIDADES
 Indica cuántos objetos se pueden relacionar con otro, se implementa con arreglos.
-- Usuario.java línea 12: private Enfermedad[] enfermedades (un usuario puede tener varias enfermedades)
+- Usuario.java línea 12: private EnfermanioNacimiento[] enfermanioNacimientoes (un usuario puede tener varias enfermanioNacimientoes)
 - Curso.java línea 8: private Equipo[] equipo (un curso puede tener varios equipos)
 - Principal.java línea 100: Usuario[] usuarios = new Usuario[3]
  
@@ -72,7 +72,7 @@ Se crean objetos usando "new" seguido del constructor.
 Un objeto contiene referencias a otros objetos que existen de forma independiente.
 - Turno.java línea 3: tiene Usuario, Instructor, Simulador y Curso
 - Usuario.java línea 9: tiene Tipo_de_usuario
-- Usuario.java línea 12: tiene Enfermedad[]
+- Usuario.java línea 12: tiene EnfermanioNacimiento[]
 - Curso.java línea 8: tiene Equipo[]
  
 12. HERENCIA
@@ -86,4 +86,4 @@ Una variable de tipo superclase puede referenciar subclases. En ejecución se ll
 - Principal.java línea 19: imprimirDescuento(Usuario usuario) recibe cualquier subclase
 - Principal.java línea 25: crearUsuarioGenerico() retorna tipo Usuario pero crea un UsuarioPersona
 - Principal.java línea 100: Usuario[] guarda UsuarioPersona, UsuarioVIP y UsuarioAnimal
-REPOSITORIO GITHUB: https://github.com/Nicolas0224/paradigmas1/tree/07b32b654ea8f383b2fdf0acec300d9bc14127aa/SimuladorGravedad https://github.com/Nicolas0224/paradigmas1
+REPOSITORIO GITHUB: https://github.com/Nicolas0224/paradigmas1/tree/07b32b654ea8f383b2fdf0acec300d9bc14127aa/SimuladorGravanioNacimiento https://github.com/Nicolas0224/paradigmas1

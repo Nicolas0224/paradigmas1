@@ -4,19 +4,19 @@ public class Usuario {
     private String id;
     private String nombre;
     private String sexo;
-    private int edad;
+    private int anioNacimiento;
     private String altura;
     private Tipo_de_usuario tipoDeUsuario;
     private String contacto;
     private String telefono;
     private Enfermedad[] enfermedades;
 
-    public Usuario(String id, String nombre, String sexo, int edad, String altura,
+    public Usuario(String id, String nombre, String sexo, int anioNacimiento, String altura,
                    Tipo_de_usuario tipoDeUsuario, String contacto, String telefono) {
         this.id = id;
         this.nombre = nombre;
         this.sexo = sexo;
-        this.edad = edad;
+        this.anioNacimiento = anioNacimiento;
         this.altura = altura;
         this.tipoDeUsuario = tipoDeUsuario;
         this.contacto = contacto;
@@ -32,8 +32,8 @@ public class Usuario {
     public String getSexo() { return sexo; }
     public void setSexo(String sexo) { this.sexo = sexo; }
 
-    public int getEdad() { return edad; }
-    public void setEdad(int edad) { this.edad = edad; }
+    public int getAnioNacimiento() { return anioNacimiento; }
+    public void setAnioNacimiento(int anioNacimiento) { this.anioNacimiento = anioNacimiento; }
 
     public String getAltura() { return altura; }
     public void setAltura(String altura) { this.altura = altura; }
@@ -47,24 +47,23 @@ public class Usuario {
     public String getTelefono() { return telefono; }
     public void setTelefono(String telefono) { this.telefono = telefono; }
 
-    public Enfermedad[] getEnfermedades() { return enfermedades; }
-    public void setEnfermedades(Enfermedad[] enfermedades) { this.enfermedades = enfermedades; }
-
-    protected int calcularEdad(int anioActual) {
-        return anioActual - edad;
+    public Enfermedad[] getEnfermedades() { return enfermedades; } 
+    public void setEnfermedades(Enfermedad[] enfermedades) { this.enfermedades = enfermedades; } 
+    protected int calcularEdad(int anioActual) {  
+        return anioActual - anioNacimiento;
     }
 
     protected double calcularIMC(double peso, double alturaM) {
         return peso / (alturaM * alturaM);
     }
 
-    // Sobrecarga 
-    public  int calcularDescuento(String fechaInscripcion) {
+    // Sobrecarga
+    public int calcularDescuento(String fechaInscripcion) {
         return 0;
     }
 
     // Sobrecarga
-    public  int calcularDescuento(String fechaInscripcion, String membresia) {
+    public int calcularDescuento(String fechaInscripcion, String membresia) {
         int base = calcularDescuento(fechaInscripcion);
         if (membresia.equals("Full"))   return base + 15;
         if (membresia.equals("Medio"))  return base + 10;
@@ -78,7 +77,7 @@ public class Usuario {
                 "id='" + id + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", sexo='" + sexo + '\'' +
-                ", edad=" + edad +
+                ", anioNacimiento=" + anioNacimiento +
                 ", altura='" + altura + '\'' +
                 ", tipoDeUsuario=" + tipoDeUsuario +
                 ", contacto='" + contacto + '\'' +

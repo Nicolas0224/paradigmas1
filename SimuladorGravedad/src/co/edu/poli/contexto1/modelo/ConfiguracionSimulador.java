@@ -3,18 +3,18 @@ package co.edu.poli.contexto1.modelo;
 //Clase que no hereda
 public final class ConfiguracionSimulador {
 
-    private String nivelGravedad;
+    private String nivelGravanioNacimiento;
     private String modoEntrenamiento;
     private int duracionSesionMinutos;
 
-    public ConfiguracionSimulador(String nivelGravedad, String modoEntrenamiento, int duracionSesionMinutos) {
-        this.nivelGravedad = nivelGravedad;
+    public ConfiguracionSimulador(String nivelGravanioNacimiento, String modoEntrenamiento, int duracionSesionMinutos) {
+        this.nivelGravanioNacimiento = nivelGravanioNacimiento;
         this.modoEntrenamiento = modoEntrenamiento;
         this.duracionSesionMinutos = duracionSesionMinutos;
     }
 
-    public String getNivelGravedad() { return nivelGravedad; }
-    public void setNivelGravedad(String nivelGravedad) { this.nivelGravedad = nivelGravedad; }
+    public String getNivelGravanioNacimiento() { return nivelGravanioNacimiento; }
+    public void setNivelGravanioNacimiento(String nivelGravanioNacimiento) { this.nivelGravanioNacimiento = nivelGravanioNacimiento; }
 
     public String getModoEntrenamiento() { return modoEntrenamiento; }
     public void setModoEntrenamiento(String modoEntrenamiento) { this.modoEntrenamiento = modoEntrenamiento; }
@@ -25,7 +25,7 @@ public final class ConfiguracionSimulador {
     @Override
     public String toString() {
         return "\n********** CONFIGURACION SIMULADOR **********\n" +
-                "nivelGravedad='" + nivelGravedad + '\'' +
+                "nivelGravanioNacimiento='" + nivelGravanioNacimiento + '\'' +
                 ", modoEntrenamiento='" + modoEntrenamiento + '\'' +
                 ", duracionSesionMinutos=" + duracionSesionMinutos;
     }
