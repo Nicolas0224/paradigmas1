@@ -94,7 +94,7 @@ public class Principal {
 		System.out.println(turnoVip);
 		System.out.println(turnoAnimal);
 
-		// PUNTO 1 - arreglo en la supersuperclase con 5 posiciones y 3 objetos de
+		// PUNTO 1 - Arreglo en la supersuperclase con 5 posiciones y 3 objetos de
 		// subclases
 		System.out.println("\n********** PUNTO 1 - ARREGLO SUPERSUPERCLASE **********");
 		Usuario[] usuarios = new Usuario[3];
