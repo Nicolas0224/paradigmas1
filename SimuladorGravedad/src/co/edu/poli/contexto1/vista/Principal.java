@@ -46,7 +46,7 @@ public class Principal {
 		usuarioVip.setEnfermedades(new Enfermedad[] { enfermedad3 });
 
 		UsuarioAnimal usuarioAnimal = new UsuarioAnimal("A001", "Rocky", "Macho", 3, "0.40", tipoAnimal,
-				"perro@hotmail.com", "3009876543", "Perro", "Labrador", "Pequeño", true);
+				"perro@hotmail.com", "3009876543", true);
 
 		Enfermedad enfermedad4 = new Enfermedad("Displasia", "Leve", "Fisioterapia", "E004");
 		usuarioAnimal.setEnfermedades(new Enfermedad[] { enfermedad4 });
