@@ -44,3 +44,4 @@ public final class ConfiguracionSimulador {
                 ", modoEntrenamiento='" + modoEntrenamiento + '\'' +
                 ", duracionSesionMinutos=" + duracionSesionMinutos;
     }
+}
