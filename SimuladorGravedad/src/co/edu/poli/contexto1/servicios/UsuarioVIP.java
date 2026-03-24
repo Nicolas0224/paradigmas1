@@ -23,6 +23,16 @@ public class UsuarioVIP extends UsuarioPersona {
     public String getNivelVip() { return nivelVip; }
     public void setNivelVip(String nivelVip) { this.nivelVip = nivelVip; }
  
+   
+    
+    //Metodo abstracto del padre
+    @Override
+    public double calcularCostoSesion(String fechaInscripcion) { 
+    		double costoBase = 1500000;
+    		int descuento = calcularDescuento(fechaInscripcion);
+    		return costoBase -(costoBase * descuento / 100);
+    }
+    
     @Override
     public int calcularDescuento(String fechaInscripcion) {
         int base = 30;

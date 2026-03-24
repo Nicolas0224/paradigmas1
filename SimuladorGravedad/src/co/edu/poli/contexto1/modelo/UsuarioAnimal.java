@@ -24,7 +24,16 @@ public class UsuarioAnimal extends Usuario {
     public String getRaza()    { return getTipoDeUsuario().getRaza(); }
     public String getTamaño()  { return getTipoDeUsuario().getTamaño(); }
 	
-	
+   
+    
+    //Metodo abstracto del padre
+    @Override
+    public double calcularCostoSesion(String fechaInscripcion) { 
+    		double costoBase = 3000000;
+    		int descuento = calcularDescuento(fechaInscripcion);
+    		return costoBase -(costoBase * descuento / 100);
+    }
+    
 	@Override
     public int calcularDescuento(String fechaInscripcion) {
         if (vacunado) return 10;

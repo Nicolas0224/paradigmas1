@@ -28,6 +28,16 @@ public class UsuarioPersona extends Usuario {
     public String getGrupoSanguineo() { return grupoSanguineo; }
     public void setGrupoSanguineo(String grupoSanguineo) { this.grupoSanguineo = grupoSanguineo; }
 
+  
+    
+    //Metodo abstracto del padre
+    @Override
+    public double calcularCostoSesion(String fechaInscripcion) { 
+    		double costoBase = 1500000;
+    		int descuento = calcularDescuento(fechaInscripcion);
+    		return costoBase -(costoBase * descuento / 100);
+    }
+    
     @Override
     public   int calcularDescuento(String fechaInscripcion) {
         int base = super.calcularDescuento(fechaInscripcion);
@@ -44,7 +54,6 @@ public class UsuarioPersona extends Usuario {
         if (membresia.equals("Basico")) return base + 5;
         return base;
     }
-    
     
     @Override
     public String toString() {

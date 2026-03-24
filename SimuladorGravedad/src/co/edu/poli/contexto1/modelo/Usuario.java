@@ -1,6 +1,6 @@
 package co.edu.poli.contexto1.modelo;
 
-public class Usuario {
+public abstract class Usuario {
     private String id;
     private String nombre;
     private String sexo;
@@ -49,9 +49,15 @@ public class Usuario {
 
     public Enfermedad[] getEnfermedades() { return enfermedades; } 
     public void setEnfermedades(Enfermedad[] enfermedades) { this.enfermedades = enfermedades; } 
-    protected int calcularEdad(int anioActual) {  
+    
+   
+    //Metodo abstracto que toma el desceunto 
+    public abstract double calcularCostoSesion(String fechaInscripcion);
+ 
+    protected int calcularEdad(int anioActual) {
         return anioActual - anioNacimiento;
     }
+    
 
     protected double calcularIMC(double peso, double alturaM) {
         return peso / (alturaM * alturaM);
@@ -61,6 +67,7 @@ public class Usuario {
     public int calcularDescuento(String fechaInscripcion) {
         return 0;
     }
+    
 
     // Sobrecarga
     public int calcularDescuento(String fechaInscripcion, String membresia) {
