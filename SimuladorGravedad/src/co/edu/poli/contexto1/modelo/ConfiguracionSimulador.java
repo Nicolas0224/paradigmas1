@@ -3,29 +3,44 @@ package co.edu.poli.contexto1.modelo;
 //Clase que no hereda
 public final class ConfiguracionSimulador {
 
-    private String nivelGravedad;
-    private String modoEntrenamiento;
-    private int duracionSesionMinutos;
+	private String nivelGravedad;
+	private String modoEntrenamiento;
+	private int duracionSesionMinutos;
 
-    public ConfiguracionSimulador(String nivelGravedad, String modoEntrenamiento, int duracionSesionMinutos) {
-        this.nivelGravedad = nivelGravedad;
-        this.modoEntrenamiento = modoEntrenamiento;
-        this.duracionSesionMinutos = duracionSesionMinutos;
-    }
+	public ConfiguracionSimulador(String nivelGravedad, String modoEntrenamiento, int duracionSesionMinutos) {
+		this.nivelGravedad = nivelGravedad;
+		this.modoEntrenamiento = modoEntrenamiento;
+		this.duracionSesionMinutos = duracionSesionMinutos;
+	}
 
-    public String getNivelGravanioNacimiento() { return nivelGravedad; }
-    public void setNivelGravanioNacimiento(String nivelGravanioNacimiento) { this.nivelGravedad = nivelGravanioNacimiento; }
+	public String getNivelGravedad() {
+		return nivelGravedad;
+	}
 
-    public String getModoEntrenamiento() { return modoEntrenamiento; }
-    public void setModoEntrenamiento(String modoEntrenamiento) { this.modoEntrenamiento = modoEntrenamiento; }
+	public void setNivelGravedad(String nivelGravedad) {
+		this.nivelGravedad = nivelGravedad;
+	}
 
-    public int getDuracionSesionMinutos() { return duracionSesionMinutos; }
-    public void setDuracionSesionMinutos(int duracionSesionMinutos) { this.duracionSesionMinutos = duracionSesionMinutos; }
+	public String getModoEntrenamiento() {
+		return modoEntrenamiento;
+	}
 
-    @Override
+	public void setModoEntrenamiento(String modoEntrenamiento) {
+		this.modoEntrenamiento = modoEntrenamiento;
+	}
+
+	public int getDuracionSesionMinutos() {
+		return duracionSesionMinutos;
+	}
+
+	public void setDuracionSesionMinutos(int duracionSesionMinutos) {
+		this.duracionSesionMinutos = duracionSesionMinutos;
+	}
+
+	@Override
     public String toString() {
         return "\n********** CONFIGURACION SIMULADOR **********\n" +
-                "nivelGravanioNacimiento='" + nivelGravedad + '\'' +
+                "nivelGravedad='" + nivelGravedad + '\'' +
                 ", modoEntrenamiento='" + modoEntrenamiento + '\'' +
                 ", duracionSesionMinutos=" + duracionSesionMinutos;
     }
