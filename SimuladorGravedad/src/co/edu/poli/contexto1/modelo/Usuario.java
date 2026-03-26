@@ -10,9 +10,10 @@ public abstract class Usuario {
     private String contacto;
     private String telefono;
     private Enfermedad[] enfermedades;
+    private double peso;
 
     public Usuario(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                   Tipo_de_usuario tipoDeUsuario, String contacto, String telefono) {
+                   Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso) {
         this.id = id;
         this.nombre = nombre;
         this.sexo = sexo;
@@ -21,6 +22,7 @@ public abstract class Usuario {
         this.tipoDeUsuario = tipoDeUsuario;
         this.contacto = contacto;
         this.telefono = telefono;
+        this.peso = peso;
     }
 
     public String getId() { return id; }
@@ -50,6 +52,9 @@ public abstract class Usuario {
     public Enfermedad[] getEnfermedades() { return enfermedades; } 
     public void setEnfermedades(Enfermedad[] enfermedades) { this.enfermedades = enfermedades; } 
     
+    public double getPeso() { return peso; }
+    public void setPeso(double peso) { this.peso = peso; }
+    
    
     //Metodo abstracto que toma el desceunto 
     public abstract double calcularCostoSesion(String fechaInscripcion);
@@ -59,8 +64,8 @@ public abstract class Usuario {
     }
     
 
-    protected double calcularIMC(double peso, double alturaM) {
-        return peso / (alturaM * alturaM);
+    protected double calcularIMC(double alturaM) {
+        return getPeso () / (alturaM * alturaM);
     }
 
     // Sobrecarga
@@ -86,6 +91,7 @@ public abstract class Usuario {
                 ", sexo='" + sexo + '\'' +
                 ", anioNacimiento=" + anioNacimiento +
                 ", altura='" + altura + '\'' +
+                ", peso=" + peso + '\'' +
                 ", tipoDeUsuario=" + tipoDeUsuario +
                 ", contacto='" + contacto + '\'' +
                 ", telefono='" + telefono + '\'';

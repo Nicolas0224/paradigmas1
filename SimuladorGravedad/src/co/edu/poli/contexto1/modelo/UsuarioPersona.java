@@ -7,9 +7,9 @@ public class UsuarioPersona extends Usuario {
     private String grupoSanguineo;
 
     public UsuarioPersona(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                          Tipo_de_usuario tipoDeUsuario, String contacto, String telefono,
+                          Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso,
                           String ocupacion, String nivelEducativo, String numeroCedula, String grupoSanguineo) {
-        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono);
+        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono, peso);
         this.ocupacion = ocupacion;
         this.nivelEducativo = nivelEducativo;
         this.numeroCedula = numeroCedula;

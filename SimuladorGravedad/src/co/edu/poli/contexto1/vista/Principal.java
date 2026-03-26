@@ -22,20 +22,20 @@ public class Principal {
 		Tipo_de_usuario tipoAnimal = new Tipo_de_usuario("TU002", "Perro", "Labrador", "Pequeño");
 
 		UsuarioPersona usuarioPersona = new UsuarioPersona("UP001", "Nicolas Atehortua", "Masculino", 1991, "1.70",
-				tipoHumano, "nikolasd29@gmail.com", "3246847152", "Ingeniero", "Universitario", "1024985449", "O+");
+				tipoHumano, "nikolasd29@gmail.com", "3246847152", 70.5, "Ingeniero", "Universitario", "1024985449", "O+");
 
 		Enfermedad enfermedad1 = new Enfermedad("Diabetes", "Leve", "6 meses", "E001");
 		Enfermedad enfermedad2 = new Enfermedad("Hipertension", "Media", "1 año", "E002");
 		usuarioPersona.setEnfermedades(new Enfermedad[] { enfermedad1, enfermedad2 });
 
 		UsuarioVIP usuarioVip = new UsuarioVIP("UPV002", "Luisa Gomez", "Femenino", 1998, "1.65", tipoHumano,
-				"laurita2026@gmail.com", "3101234567", "Medico", "Universitario", "2058741236", "A+", "Platino");
+				"laurita2026@gmail.com", "3101234567", 55.2, "Medico", "Universitario", "2058741236", "A+", "Platino");
 
 		Enfermedad enfermedad3 = new Enfermedad("Asma", "Leve", "Permanente", "E003");
 		usuarioVip.setEnfermedades(new Enfermedad[] { enfermedad3 });
 
 		UsuarioAnimal usuarioAnimal = new UsuarioAnimal("UA001", "Rocky", "Macho", 2023, "0.40", tipoAnimal,
-				"perro@hotmail.com", "3009876543", true); // ✅ sin especie, raza, tamaño
+				"perro@hotmail.com", "3009876543", 34.3, true); 
 
 		Enfermedad enfermedad4 = new Enfermedad("Displasia", "Leve", "Fisioterapia", "E004");
 		usuarioAnimal.setEnfermedades(new Enfermedad[] { enfermedad4 });
@@ -151,7 +151,7 @@ public class Principal {
 		crud.modificar("UP001", null);
 
 		// Validacion modificar — ids no coinciden
-		crud.modificar("UP001", usuarioVip); // usuarioVip tiene id "UP002"
+		crud.modificar("UP001", usuarioVip); // usuarioVip tiene id "UPV002"
 
 		// Validacion eliminar — id null
 		crud.eliminar(null);
@@ -178,7 +178,7 @@ public class Principal {
 		System.out.println("\n--- MODIFICAR ---");
 		UsuarioPersona usuarioModificado = new UsuarioPersona(
 		    "UP001", "Nicolas David Atehortua", "Masculino", 1998, "1.80",
-		    tipoHumano, "nicolasd.04221@gmail.com", "3115922234",
+		    tipoHumano, "nicolasd.04221@gmail.com", "3115922234", 70.5,
 		    "Ingeniero", "Universitario", "1024985449", "B+");
 		crud.modificar("UP001", usuarioModificado);  
 		crud.consultar("UP001");                     
@@ -199,7 +199,7 @@ public class Principal {
 	// PUNTO 2 - método polimórfico que retorna un tipo supersuperclase
 	public static Usuario crearUsuarioGenerico(Tipo_de_usuario tipo) {
 		return new UsuarioPersona("UPG003", "Alejandra Rueda", "Femenino", 2006, "1.62", tipo, "alejita524@gmail.com",
-				"3246847182", "Estudiante", "Universitario", "1025524524", "O+");
+				"3246847182", 60.1, "Estudiante", "Universitario", "1025524524", "O+");
 	}
 
 }

@@ -5,8 +5,8 @@ public class UsuarioAnimal extends Usuario {
     private boolean vacunado;
 
     public UsuarioAnimal(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                         Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, boolean vacunado) {
-        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono);
+                         Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso,boolean vacunado) {
+        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono, peso);
       
         this.vacunado = vacunado;
     }

@@ -11,10 +11,10 @@ public class UsuarioVIP extends UsuarioPersona {
     private String nivelVip;
  
     public UsuarioVIP(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                      Tipo_de_usuario tipoDeUsuario, String contacto, String telefono,
+                      Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso,
                       String ocupacion, String nivelEducativo, String numeroCedula,
                       String grupoSanguineo, String nivelVip) {
-        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono,
+        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono, peso,
               ocupacion, nivelEducativo, numeroCedula, grupoSanguineo);
         this.nivelVip = nivelVip;
         this.nivelVipInicial = nivelVip;
