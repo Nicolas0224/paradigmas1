@@ -120,7 +120,47 @@ public class Principal {
 		// CRUD
 		System.out.println("\n********** CRUD **********");
 
+	
+		
 		ImplementacionOperacionCRUD crud = new ImplementacionOperacionCRUD();
+		
+		// PRUEBA DE VALIDACIONES
+		System.out.println("\n--- PRUEBA DE VALIDACIONES ---");
+
+		// Validacion crear — usuario null
+		crud.crear(null);
+
+		// Validacion crear — id duplicado
+		crud.crear(usuarioPersona); // UP001
+		crud.crear(usuarioPersona); // UP001 duplicado
+
+		// Validacion consultar — id null
+		crud.consultar(null);
+
+		// Validacion consultar — id vacio
+		crud.consultar("");
+
+		// Validacion consultar — arreglo vacio
+		ImplementacionOperacionCRUD crudVacio = new ImplementacionOperacionCRUD();
+		crudVacio.consultar("UP001");
+
+		// Validacion modificar — id null
+		crud.modificar(null, usuarioPersona);
+
+		// Validacion modificar — usuario nuevo null
+		crud.modificar("UP001", null);
+
+		// Validacion modificar — ids no coinciden
+		crud.modificar("UP001", usuarioVip); // usuarioVip tiene id "UP002"
+
+		// Validacion eliminar — id null
+		crud.eliminar(null);
+
+		// Validacion eliminar — id vacio
+		crud.eliminar("");
+
+		// Validacion eliminar — arreglo vacio
+		crudVacio.eliminar("UP001");
 
 		// CREAR
 		System.out.println("\n--- CREAR ---");
@@ -146,7 +186,7 @@ public class Principal {
 		// ELIMINAR
 		System.out.println("\n--- ELIMINAR ---");
 		crud.eliminar("UA001"); 
-		crud.consultar("UPV002");
+		crud.consultar("UA001");
 		crud.eliminar("999");   
 	}
 

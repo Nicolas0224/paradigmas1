@@ -4,9 +4,9 @@ import co.edu.poli.contexto1.modelo.Usuario;
 
 public interface OperacionCRUD {
   
-	void crear(Usuario usuario);
+	String crear(Usuario usuario);
     Usuario consultar(String id);
-    void modificar(String id, Usuario usuarioNuevo);
-    void eliminar(String id);
+    String modificar(String id, Usuario usuarioNuevo);
+    String eliminar(String id);
     
 }
