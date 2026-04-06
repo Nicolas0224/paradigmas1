@@ -124,6 +124,8 @@ public class Principal {
 		
 		ImplementacionOperacionCRUD crud = new ImplementacionOperacionCRUD();
 		
+		
+		/*
 		// PRUEBA DE VALIDACIONES
 		System.out.println("\n--- PRUEBA DE VALIDACIONES ---");
 
@@ -188,6 +190,24 @@ public class Principal {
 		crud.eliminar("UA001"); 
 		crud.consultar("UA001");
 		crud.eliminar("999");   
+		
+		
+		System.out.println(crud.serializar(crud.getListado(), "", "file.bin"));
+		
+		
+		*/
+	 Usuario[]Lista2= crud.deserializar("", "file.bin");
+		
+	 crud.setListado(Lista2);
+	 crud.consultartodo();
+	 
+	 for (int i = 0; i < Lista2.length; i++) {
+			System.out.println(Lista2[i]);
+			
+		}
+	 
+	 
+	 
 	}
 
 	// PUNTO 2 - método polimórfico que recibe un parámetro de tipo supersuperclase

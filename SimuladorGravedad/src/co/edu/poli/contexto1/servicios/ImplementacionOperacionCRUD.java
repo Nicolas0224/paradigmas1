@@ -1,7 +1,13 @@
 package co.edu.poli.contexto1.servicios;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import co.edu.poli.contexto1.modelo.Usuario;
-public class ImplementacionOperacionCRUD implements OperacionCRUD{
+
+public class ImplementacionOperacionCRUD implements OperacionCRUD, OperacionArchivo{
 
 	private Usuario[] listado;
 	private int cantidad;
@@ -12,6 +18,16 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD{
 	}
 	
 	
+	public void setListado(Usuario[] listado) {
+		this.listado = listado;
+	}
+
+
+	public Usuario[] getListado() {
+		return listado;
+	}
+
+
 	@Override
 	public String crear(Usuario nuevo) {
 
@@ -179,5 +195,45 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD{
 		}
 		System.out.println("Usuario NO encontrado");
 		return("");
+	}
+
+
+	@Override
+	public String serializar(Usuario[] usuarios, String path, String name) {
+		try {
+            FileOutputStream fos = new FileOutputStream(path + name);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(usuarios);
+            oos.close();
+            fos.close();
+            return "File create!!";
+        } catch (IOException ioe) {
+            return "Error file " + ioe.getMessage();
+        }
+	}
+
+
+	@Override
+	public Usuario[] deserializar(String path, String name) {
+		Usuario[] a = null;
+        try {
+            FileInputStream fis = new FileInputStream(path + name);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            a = (Usuario[]) ois.readObject();
+            ois.close();
+            fis.close();
+        } catch (IOException ioe) {
+            System.err.println(ioe.getMessage());
+        } catch (ClassNotFoundException c) {
+            System.err.println(c.getMessage());
+        }
+        return a;
+	}
+
+
+	@Override
+	public Usuario[] consultartodo() {
+		// TODO Auto-generated method stub
+		return listado;
 	}
 }

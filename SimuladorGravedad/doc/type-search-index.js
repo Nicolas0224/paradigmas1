@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"co.edu.poli.contexto1.modelo","l":"ConfiguracionSimulador"}];updateSearchResults();

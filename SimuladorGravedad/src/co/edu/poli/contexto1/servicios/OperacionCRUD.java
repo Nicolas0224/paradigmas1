@@ -6,6 +6,7 @@ public interface OperacionCRUD {
   
 	String crear(Usuario usuario);
     Usuario consultar(String id);
+    Usuario[] consultartodo ();
     String modificar(String id, Usuario usuarioNuevo);
     String eliminar(String id);
     
