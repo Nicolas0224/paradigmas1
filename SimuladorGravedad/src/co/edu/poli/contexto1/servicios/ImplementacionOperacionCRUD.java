@@ -45,7 +45,13 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD, OperacionArch
 	 * @param listado El nuevo arreglo de usuarios.
 	 */
 	public void setListado(Usuario[] listado) {
-		this.listado = listado;
+	    this.listado = listado;
+	    this.cantidad = 0;
+	    for (int i = 0; i < listado.length; i++) {
+	        if (listado[i] != null) {
+	            this.cantidad++;
+	        }
+	    }
 	}
 
 	/**
@@ -124,7 +130,7 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD, OperacionArch
 			if (listado[i] == null) {
 				listado[i] = nuevo;
 				cantidad++;
-				System.out.println("Usuario creado correctamente en la posicion" + i);
+				System.out.println("Usuario creado correctamente en la posicion " + i);
 				return "";
 			}
 		}

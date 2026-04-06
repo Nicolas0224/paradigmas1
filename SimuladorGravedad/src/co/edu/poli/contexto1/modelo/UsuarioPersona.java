@@ -37,7 +37,7 @@ public class UsuarioPersona extends Usuario {
      * @param anioNacimiento  Año de nacimiento de la persona.
      * @param altura          Altura de la persona.
      * @param tipoDeUsuario   Tipo de usuario que clasifica a la persona.
-     * @param contacto        Información de contacto de la persona.
+     * @param correo          Correo de contacto de la persona.
      * @param telefono        Número de teléfono de la persona.
      * @param peso            Peso de la persona en kilogramos.
      * @param ocupacion       Ocupación o profesión de la persona.
@@ -46,9 +46,9 @@ public class UsuarioPersona extends Usuario {
      * @param grupoSanguineo  Grupo sanguíneo de la persona.
      */
     public UsuarioPersona(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                          Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso,
+                          Tipo_de_usuario tipoDeUsuario, String correo, String telefono, double peso,
                           String ocupacion, String nivelEducativo, String numeroCedula, String grupoSanguineo) {
-        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono, peso);
+        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, correo, telefono, peso);
         this.ocupacion = ocupacion;
         this.nivelEducativo = nivelEducativo;
         this.numeroCedula = numeroCedula;

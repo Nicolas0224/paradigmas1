@@ -224,7 +224,7 @@ public class Principal {
 					System.out.print("Año de nacimiento: "); int anio = scanner.nextInt(); scanner.nextLine();
 					System.out.print("Altura: "); String altura = scanner.nextLine();
 					System.out.print("Peso: "); double peso = scanner.nextDouble(); scanner.nextLine();
-					System.out.print("Contacto: "); String contacto = scanner.nextLine();
+					System.out.print("Correo: "); String correo = scanner.nextLine();
 					System.out.print("Telefono: "); String telefono = scanner.nextLine();
 
 					System.out.print("ID Tipo de usuario: "); String tipoId = scanner.nextLine();
@@ -239,13 +239,13 @@ public class Principal {
 						System.out.print("Numero de cedula: "); String cedula = scanner.nextLine();
 						System.out.print("Grupo sanguineo: "); String sangre = scanner.nextLine();
 						UsuarioPersona persona = new UsuarioPersona(id, nombre, sexo, anio, altura,
-								tipoUsuario, contacto, telefono, peso, ocupacion, nivelEdu, cedula, sangre);
+								tipoUsuario, correo, telefono, peso, ocupacion, nivelEdu, cedula, sangre);
 						crud.crear(persona);
 
 					} else if (tipo == 2) {
 						System.out.print("¿Esta vacunado? (true/false): "); boolean vacunado = scanner.nextBoolean(); scanner.nextLine();
 						UsuarioAnimal animal = new UsuarioAnimal(id, nombre, sexo, anio, altura,
-								tipoUsuario, contacto, telefono, peso, vacunado);
+								tipoUsuario, correo, telefono, peso, vacunado);
 						crud.crear(animal);
 
 					} else if (tipo == 3) {
@@ -255,7 +255,7 @@ public class Principal {
 						System.out.print("Grupo sanguineo: "); String sangre = scanner.nextLine();
 						System.out.print("Nivel VIP (Platino/Oro/Plata): "); String nivelVip = scanner.nextLine();
 						UsuarioVIP vip = new UsuarioVIP(id, nombre, sexo, anio, altura,
-								tipoUsuario, contacto, telefono, peso, ocupacion, nivelEdu, cedula, sangre, nivelVip);
+								tipoUsuario, correo, telefono, peso, ocupacion, nivelEdu, cedula, sangre, nivelVip);
 						crud.crear(vip);
 
 					} else {
@@ -273,15 +273,17 @@ public class Principal {
 				case 3:
 					System.out.println("\n--- TODOS LOS USUARIOS ---");
 					Usuario[] todos = crud.consultartodo();
-					boolean hayUsuarios = false;
+					int contador = 0;
+
 					for (int i = 0; i < todos.length; i++) {
-						if (todos[i] != null) {
-							System.out.println(todos[i]);
-							hayUsuarios = true;
-						}
+					    if (todos[i] != null) {
+					        System.out.println(todos[i]);
+					        contador++;
+					    }
 					}
-					if (!hayUsuarios) {
-						System.out.println("No hay usuarios registrados");
+
+					if (contador == 0) {
+					    System.out.println("No hay usuarios registrados");
 					}
 					break;
 
@@ -303,7 +305,7 @@ public class Principal {
 					System.out.print("Año de nacimiento: "); int anioMod = scanner.nextInt(); scanner.nextLine();
 					System.out.print("Altura: "); String alturaMod = scanner.nextLine();
 					System.out.print("Peso: "); double pesoMod = scanner.nextDouble(); scanner.nextLine();
-					System.out.print("Contacto: "); String contactoMod = scanner.nextLine();
+					System.out.print("Correo: "); String correoMod = scanner.nextLine();
 					System.out.print("Telefono: "); String telefonoMod = scanner.nextLine();
 
 					System.out.print("ID Tipo de usuario: "); String tipoIdMod = scanner.nextLine();
@@ -318,13 +320,13 @@ public class Principal {
 						System.out.print("Numero de cedula: "); String cedulaMod = scanner.nextLine();
 						System.out.print("Grupo sanguineo: "); String sangreMod = scanner.nextLine();
 						UsuarioPersona personaMod = new UsuarioPersona(idModificar, nombreMod, sexoMod, anioMod, alturaMod,
-								tipoUsuarioMod, contactoMod, telefonoMod, pesoMod, ocupacionMod, nivelEduMod, cedulaMod, sangreMod);
+								tipoUsuarioMod, correoMod, telefonoMod, pesoMod, ocupacionMod, nivelEduMod, cedulaMod, sangreMod);
 						crud.modificar(idModificar, personaMod);
 
 					} else if (tipoMod == 2) {
 						System.out.print("¿Esta vacunado? (true/false): "); boolean vacunadoMod = scanner.nextBoolean(); scanner.nextLine();
 						UsuarioAnimal animalMod = new UsuarioAnimal(idModificar, nombreMod, sexoMod, anioMod, alturaMod,
-								tipoUsuarioMod, contactoMod, telefonoMod, pesoMod, vacunadoMod);
+								tipoUsuarioMod, correoMod, telefonoMod, pesoMod, vacunadoMod);
 						crud.modificar(idModificar, animalMod);
 
 					} else if (tipoMod == 3) {
@@ -334,7 +336,7 @@ public class Principal {
 						System.out.print("Grupo sanguineo: "); String sangreMod = scanner.nextLine();
 						System.out.print("Nivel VIP (Platino/Oro/Plata): "); String nivelVipMod = scanner.nextLine();
 						UsuarioVIP vipMod = new UsuarioVIP(idModificar, nombreMod, sexoMod, anioMod, alturaMod,
-								tipoUsuarioMod, contactoMod, telefonoMod, pesoMod, ocupacionMod, nivelEduMod, cedulaMod, sangreMod, nivelVipMod);
+								tipoUsuarioMod, correoMod, telefonoMod, pesoMod, ocupacionMod, nivelEduMod, cedulaMod, sangreMod, nivelVipMod);
 						crud.modificar(idModificar, vipMod);
 
 					} else {
@@ -357,17 +359,17 @@ public class Principal {
 					break;
 
 				case 7:
-					System.out.println("\n--- DESERIALIZAR ---");
-					System.out.print("Nombre del archivo (ej: file.bin): ");
-					String archivoDes = scanner.nextLine();
-					Usuario[] cargados = crud.deserializar("", archivoDes);
-					if (cargados != null) {
-						crud.setListado(cargados);
-						System.out.println("Datos cargados");
-					} else {
-						System.out.println("No se pudo cargar el archivo");
-					}
-					break;
+				    System.out.println("\n--- DESERIALIZAR ---");
+				    System.out.print("Nombre del archivo (ej: file.bin): ");
+				    String archivoDes = scanner.nextLine();
+				    Usuario[] cargados = crud.deserializar("", archivoDes);
+				    if (cargados != null) {
+				        crud.setListado(cargados);
+				        System.out.println("Datos cargados");
+				    } else {
+				        System.out.println("No se pudo cargar el archivo");
+				    }
+				    break;
 
 				case 0:
 					System.out.println("Fin");

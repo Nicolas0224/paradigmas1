@@ -42,7 +42,7 @@ public abstract class Usuario implements Serializable {
     private Tipo_de_usuario tipoDeUsuario;
 
     /** Información de contacto del usuario o responsable. */
-    private String contacto;
+    private String correo;
 
     /** Número de teléfono del usuario o responsable. */
     private String telefono;
@@ -62,19 +62,19 @@ public abstract class Usuario implements Serializable {
      * @param anioNacimiento Año de nacimiento del usuario.
      * @param altura         Altura del usuario.
      * @param tipoDeUsuario  Tipo de usuario que lo clasifica.
-     * @param contacto       Información de contacto del usuario o responsable.
+     * @param correo         Correo electronico del usuario o responsable.
      * @param telefono       Número de teléfono del usuario o responsable.
      * @param peso           Peso del usuario en kilogramos.
      */
     public Usuario(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                   Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso) {
+                   Tipo_de_usuario tipoDeUsuario, String correo, String telefono, double peso) {
         this.id = id;
         this.nombre = nombre;
         this.sexo = sexo;
         this.anioNacimiento = anioNacimiento;
         this.altura = altura;
         this.tipoDeUsuario = tipoDeUsuario;
-        this.contacto = contacto;
+        this.correo = correo;
         this.telefono = telefono;
         this.peso = peso;
     }
@@ -168,14 +168,14 @@ public abstract class Usuario implements Serializable {
      *
      * @return El contacto del usuario.
      */
-    public String getContacto() { return contacto; }
+    public String getCorreo() { return correo; }
 
     /**
      * Establece la información de contacto del usuario o responsable.
      *
      * @param contacto El nuevo contacto del usuario.
      */
-    public void setContacto(String contacto) { this.contacto = contacto; }
+    public void setCorreo(String correo) { this.correo = correo; }
 
     /**
      * Obtiene el teléfono del usuario o responsable.
@@ -303,7 +303,7 @@ public abstract class Usuario implements Serializable {
                 ", altura='" + altura + '\'' +
                 ", peso=" + peso + '\'' +
                 ", tipoDeUsuario=" + tipoDeUsuario +
-                ", contacto='" + contacto + '\'' +
+                ", correo='" + correo + '\'' +
                 ", telefono='" + telefono + '\'';
     }
 }

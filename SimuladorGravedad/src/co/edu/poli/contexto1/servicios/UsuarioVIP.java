@@ -39,7 +39,7 @@ public class UsuarioVIP extends UsuarioPersona {
      * @param anioNacimiento  Año de nacimiento del usuario.
      * @param altura          Altura del usuario.
      * @param tipoDeUsuario   Tipo de usuario que clasifica al usuario.
-     * @param contacto        Información de contacto del usuario.
+     * @param correo          Correo de contacto del usuario.
      * @param telefono        Número de teléfono del usuario.
      * @param peso            Peso del usuario en kilogramos.
      * @param ocupacion       Ocupación del usuario.
@@ -49,10 +49,10 @@ public class UsuarioVIP extends UsuarioPersona {
      * @param nivelVip        Nivel VIP inicial del usuario ("Platino", "Oro" o "Plata").
      */
     public UsuarioVIP(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                      Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso,
+                      Tipo_de_usuario tipoDeUsuario, String correo, String telefono, double peso,
                       String ocupacion, String nivelEducativo, String numeroCedula,
                       String grupoSanguineo, String nivelVip) {
-        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono, peso,
+        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, correo, telefono, peso,
               ocupacion, nivelEducativo, numeroCedula, grupoSanguineo);
         this.nivelVip = nivelVip;
         this.nivelVipInicial = nivelVip;

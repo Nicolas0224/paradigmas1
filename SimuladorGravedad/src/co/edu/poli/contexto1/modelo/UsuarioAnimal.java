@@ -28,14 +28,14 @@ public class UsuarioAnimal extends Usuario {
      * @param anioNacimiento Año de nacimiento del animal.
      * @param altura         Altura del animal.
      * @param tipoDeUsuario  Tipo de usuario con la clasificación del animal.
-     * @param contacto       Información de contacto del responsable.
+     * @param correo         Correo de contacto del responsable.
      * @param telefono       Teléfono del responsable.
      * @param peso           Peso del animal en kilogramos.
      * @param vacunado       {@code true} si el animal está vacunado; {@code false} en caso contrario.
      */
     public UsuarioAnimal(String id, String nombre, String sexo, int anioNacimiento, String altura,
-                         Tipo_de_usuario tipoDeUsuario, String contacto, String telefono, double peso, boolean vacunado) {
-        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, contacto, telefono, peso);
+                         Tipo_de_usuario tipoDeUsuario, String correo, String telefono, double peso, boolean vacunado) {
+        super(id, nombre, sexo, anioNacimiento, altura, tipoDeUsuario, correo, telefono, peso);
         this.vacunado = vacunado;
     }
 
