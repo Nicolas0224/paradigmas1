@@ -281,7 +281,9 @@ public class ImplementacionOperacionCRUD implements OperacionCRUD, OperacionArch
 		for (int i = 0; i < listado.length; i++) {
 			if (listado[i] != null && listado[i].getId().equals(id)) {
 				listado[i] = null;
+				cantidad--;
 				System.out.println("Usuario borrado");
+				
 				return "";
 			}
 		}
