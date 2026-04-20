@@ -1,6 +1,7 @@
 package co.edu.poli.contexto1.servicios;
  
 import co.edu.poli.contexto1.modelo.Usuario;
+import java.io.IOException;
  
 /**
  * Interfaz que define las operaciones de serialización y deserialización
@@ -29,7 +30,7 @@ public interface OperacionArchivo {
      * @param name Nombre del archivo a deserializar.
      * @return Arreglo de usuarios obtenido desde el archivo.
      */
-    public Usuario[] deserializar(String path, String name);
+    public Usuario[] deserializar(String path, String name) throws IOException, ClassNotFoundException;
  
 }
  

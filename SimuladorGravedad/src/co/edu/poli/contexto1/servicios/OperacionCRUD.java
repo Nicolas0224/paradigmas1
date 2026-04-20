@@ -18,7 +18,7 @@ public interface OperacionCRUD {
      * @param usuario El objeto {@link Usuario} a registrar.
      * @return Mensaje indicando el resultado de la operación.
      */
-    String crear(Usuario usuario);
+	String crear(Usuario usuario) throws Exception;
 
     /**
      * Consulta y retorna un usuario registrado según su identificador.
@@ -26,7 +26,7 @@ public interface OperacionCRUD {
      * @param id Identificador único del usuario a buscar.
      * @return El {@link Usuario} encontrado, o {@code null} si no existe.
      */
-    Usuario consultar(String id);
+	Usuario consultar(String id) throws Exception;
 
     /**
      * Retorna el arreglo completo de usuarios registrados en el sistema.
@@ -42,7 +42,7 @@ public interface OperacionCRUD {
      * @param usuarioNuevo Objeto {@link Usuario} con los nuevos datos.
      * @return Mensaje indicando el resultado de la operación.
      */
-    String modificar(String id, Usuario usuarioNuevo);
+    String modificar(String id, Usuario usuarioNuevo) throws Exception;
 
     /**
      * Elimina el usuario con el identificador especificado del sistema.
@@ -50,5 +50,5 @@ public interface OperacionCRUD {
      * @param id Identificador único del usuario a eliminar.
      * @return Mensaje indicando el resultado de la operación.
      */
-    String eliminar(String id);
+    String eliminar(String id) throws Exception;
 }
