@@ -1,4 +1,4 @@
-package co.edu.poli.contexto1.controlador;
+package co.edu.poli.contexto1.vista;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

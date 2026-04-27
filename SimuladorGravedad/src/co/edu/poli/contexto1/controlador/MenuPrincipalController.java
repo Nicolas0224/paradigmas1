@@ -74,12 +74,11 @@ public class MenuPrincipalController {
      */
     private void abrirVentana(String fxml, String titulo) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/poli/contexto1/vista/" + fxml));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle(titulo);
             stage.setScene(new Scene(root));
-            // APPLICATION_MODAL hace que el menú quede bloqueado mientras la ventana está abierta
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();
         } catch (Exception e) {
